@@ -14,12 +14,12 @@ const Footer = () => {
             path: "/",
         },
         {
-            name: "About",
-            path: "/about",
+            name: "Cart",
+            path: "/cart",
         },
         {
-            name: "FAQ",
-            path: "/faq",
+            name: "Add Product",
+            path: "/add_product",
         },
     ];
 
@@ -31,7 +31,7 @@ const Footer = () => {
             <nav className="flex justify-center items-center gap-4 border-b-[6px] border-b-[var(--red)] w-full">
                 {navLinks.map((link) => (
                     <NavLink
-                        className="transition duration-500 text-xs tracking-wider uppercase font-bold sm:p-6 p-4"
+                        className="transition duration-500 text-xs tracking-wider uppercase font-bold p-4 sm:py-6"
                         key={link?.name}
                         to={link?.path}
                     >
