@@ -26,19 +26,23 @@ const Header = () => {
     ];
 
     const toggleTheme = () => {
-        document.documentElement.classList.toggle("dark-mode");
-        document.getElementById("header").classList.toggle("border-b");
         const icon = document.getElementById("icon");
         const logo = document.getElementById("logo");
+        const slider = document.getElementById("slider");
         const footer = document.getElementById("footer");
+
+        document.documentElement.classList.toggle("dark-mode");
+        document.getElementById("header").classList.toggle("border-b");
 
         if (document.documentElement.classList.contains("dark-mode")) {
             icon.src = "/sun.png";
             logo.src = "/logo-light.png";
+            slider.style.backgroundImage = "url('slider-bg.jpg')";
             footer.style.backgroundImage = "url('/footer-bg.jpg')";
         } else {
             icon.src = "/night.png";
             logo.src = "/logo-dark.png";
+            slider.style.backgroundImage = "url('slider-bg-white.jpg')";
             footer.style.backgroundImage = "";
         }
     };
@@ -46,10 +50,10 @@ const Header = () => {
     return (
         <header
             id="header"
-            className="px-4 pt-4 lg:p-0 shadow-[0_5px_10px_0_rgba(0,0,0,.35)] sticky top-0 left-0 right-0 z-50 border-b border-b-[rgba(255,255,255,.05)] bg-[var(--bg)]"
+            className="px-4 pt-4 xl:p-0 shadow-[0_5px_10px_0_rgba(0,0,0,.35)] sticky top-0 left-0 right-0 z-50 border-b-[rgba(255,255,255,.05)] bg-[var(--bg)]"
         >
             <nav className="max-w-screen-xl mx-auto flex justify-between lg:items-center items-start">
-                <Link to="/" className="pb-4">
+                <Link to="/" className="pb-4 lg:pb-0">
                     <img id="logo" src="/logo-dark.png" alt="" />
                 </Link>
 

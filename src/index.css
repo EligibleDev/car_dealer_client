@@ -49,6 +49,6 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: -webkit-linear-gradient(transparent, #96000a);
-    background: linear-gradient(transparent, #96000a);
+    background: -webkit-linear-gradient(transparent, #c72b00);
+    background: linear-gradient(transparent, #c72b00);
 }
