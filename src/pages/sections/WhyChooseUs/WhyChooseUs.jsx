@@ -26,9 +26,9 @@ const WhyChooseUs = () => {
                     </div>
 
                     <div className=" bg-[var(--bg)] p-5 flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(227,227,227,0.6)] border-[var(--body)] my-block">
-                        <img src="\feature_4_1.svg" alt="" />
+                        <img src="\feature_4_2.svg" alt="" />
                         <span className="">
-                            <h4 className="text-xl font-bold">Master Technician</h4>
+                            <h4 className="text-xl font-bold">Domestic Repair</h4>
                             <p className="text-sm font-light text-[var(--body)]">
                                 Interactively generate
                             </p>
@@ -36,9 +36,9 @@ const WhyChooseUs = () => {
                     </div>
 
                     <div className=" bg-[var(--bg)] p-5 flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(227,227,227,0.6)] border-[var(--body)] my-block">
-                        <img src="\feature_4_1.svg" alt="" />
+                        <img src="\feature_4_3.svg" alt="" />
                         <span className="">
-                            <h4 className="text-xl font-bold">Master Technician</h4>
+                            <h4 className="text-xl font-bold">Reliable Warranty</h4>
                             <p className="text-sm font-light text-[var(--body)]">
                                 Interactively generate
                             </p>
@@ -46,9 +46,9 @@ const WhyChooseUs = () => {
                     </div>
 
                     <div className=" bg-[var(--bg)] p-5 flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(227,227,227,0.6)] border-[var(--body)] my-block">
-                        <img src="\feature_4_1.svg" alt="" />
+                        <img src="\feature_4_4.svg" alt="" />
                         <span className="">
-                            <h4 className="text-xl font-bold">Master Technician</h4>
+                            <h4 className="text-xl font-bold">No Worries</h4>
                             <p className="text-sm font-light text-[var(--body)]">
                                 Interactively generate
                             </p>
