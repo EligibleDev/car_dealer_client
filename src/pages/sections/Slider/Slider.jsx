@@ -1,17 +1,11 @@
 import { Carousel, IconButton } from "@material-tailwind/react";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { useEffect } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import Slide from "./Slide/Slide";
 
 const Slider = () => {
-    useEffect(() => {
-        Aos.init();
-    }, []);
-
     return (
         <Carousel
+            autoplay={true}
             loop={true}
             prevArrow={({ handlePrev }) => (
                 <IconButton

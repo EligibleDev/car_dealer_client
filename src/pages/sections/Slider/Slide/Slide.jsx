@@ -1,5 +1,13 @@
 import PropTypes from "prop-types";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const Slide = ({ text, title1, title2, logo, image }) => {
+    useEffect(() => {
+        Aos.init();
+    }, []);
+
     return (
         <div className="flex items-center justify-center h-full relative ">
             <div className="w-[1180px] mx-8 lg:mx-auto relative h-full">

@@ -15,7 +15,7 @@ const WhyChooseUs = () => {
                 </p>
 
                 <div className="grid sm:grid-cols-2 grid-cols-1 justify-start items-center lg:w-1/2 w-full gap-7">
-                    <div className=" bg-white p-5 flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(227,227,227,0.6)] border-[var(--body)] my-block">
+                    <div className=" bg-[var(--bg)] p-5 flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(227,227,227,0.6)] border-[var(--body)] my-block">
                         <img src="\feature_4_1.svg" alt="" />
                         <span className="">
                             <h4 className="text-xl font-bold">Master Technician</h4>
@@ -25,7 +25,7 @@ const WhyChooseUs = () => {
                         </span>
                     </div>
 
-                    <div className=" bg-white p-5 flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(227,227,227,0.6)] border-[var(--body)] my-block">
+                    <div className=" bg-[var(--bg)] p-5 flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(227,227,227,0.6)] border-[var(--body)] my-block">
                         <img src="\feature_4_1.svg" alt="" />
                         <span className="">
                             <h4 className="text-xl font-bold">Master Technician</h4>
@@ -35,7 +35,7 @@ const WhyChooseUs = () => {
                         </span>
                     </div>
 
-                    <div className=" bg-white p-5 flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(227,227,227,0.6)] border-[var(--body)] my-block">
+                    <div className=" bg-[var(--bg)] p-5 flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(227,227,227,0.6)] border-[var(--body)] my-block">
                         <img src="\feature_4_1.svg" alt="" />
                         <span className="">
                             <h4 className="text-xl font-bold">Master Technician</h4>
@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
                         </span>
                     </div>
 
-                    <div className=" bg-white p-5 flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(227,227,227,0.6)] border-[var(--body)] my-block">
+                    <div className=" bg-[var(--bg)] p-5 flex items-center justify-center gap-2 shadow-[0px_4px_20px_rgba(227,227,227,0.6)] border-[var(--body)] my-block">
                         <img src="\feature_4_1.svg" alt="" />
                         <span className="">
                             <h4 className="text-xl font-bold">Master Technician</h4>

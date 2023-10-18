@@ -45,8 +45,8 @@ html {
     background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    background: -webkit-linear-gradient(transparent, var(--red));
-    background: linear-gradient(transparent, var(--red));
+    background: var(--red);
+    background: var(--red);
     border-radius: 20px;
 }
 
