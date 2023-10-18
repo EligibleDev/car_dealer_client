@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "name": "BMW",
+        "image": "https://i.ibb.co/nPLdrn0/bmw.png"
+    },
+    {
+        "id": "2",
+        "name": "Ferrari",
+        "image": "https://i.ibb.co/2qTzJMr/ferrari.png"
+    },
+    {
+        "id": "3",
+        "name": "Lamborghini",
+        "image": "https://i.ibb.co/yWB4h2s/lambo.png"
+    },
+    {
+        "id": "4",
+        "name": "Mercedes",
+        "image": "https://i.ibb.co/QndRtz3/Mercedes-Logo-svg.png"
+    },
+    {
+        "id": "5",
+        "name": "Toyota",
+        "image": "https://i.ibb.co/jw4kvm5/toyota.png"
+    },
+    {
+        "id": "7",
+        "name": "Audi",
+        "image": "https://i.ibb.co/yXDckML/audi.png"
+    }
+]

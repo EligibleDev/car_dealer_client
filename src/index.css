@@ -21,6 +21,7 @@ html {
     font-family: "Plus Jakarta Sans", sans-serif;
     background-color: var(--bg);
     color: var(--text);
+    overflow-x: hidden;
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--red) var(--bg);
@@ -46,11 +47,9 @@ html {
 }
 ::-webkit-scrollbar-thumb {
     background: var(--red);
-    background: var(--red);
     border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: -webkit-linear-gradient(transparent, #c72b00);
-    background: linear-gradient(transparent, #c72b00);
+    background: #c72b00;
 }
