@@ -7,12 +7,14 @@
     --bg: #ffffff;
     --red: #eb3300;
     --text: #0a0a0a;
+    --body: #4b4b4b;
 }
 
 .dark-mode {
     --bg: #0a0a0a;
     --red: #eb3300;
     --text: #ffffff;
+    --body: #cdcdcd;
 }
 
 html {

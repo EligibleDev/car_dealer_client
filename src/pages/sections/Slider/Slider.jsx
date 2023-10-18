@@ -66,6 +66,20 @@ const Slider = () => {
                 logo="bmw.png"
                 image="slider-car-4.png"
             />
+            <Slide
+                text="250 GTO"
+                title1="Unique"
+                title2="As always"
+                logo="ferrari.png"
+                image="slider-car-5.png"
+            />
+            <Slide
+                text="BMW 3 Series"
+                title1="Say"
+                title2="Less"
+                logo="bmw.png"
+                image="slider-car-4.png"
+            />
         </Carousel>
     );
 };

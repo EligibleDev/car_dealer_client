@@ -30,6 +30,7 @@ const Header = () => {
         const logo = document.getElementById("logo");
         const slider = document.getElementById("slider");
         const footer = document.getElementById("footer");
+        const blocks = document.getElementsByClassName("my-block");
 
         document.documentElement.classList.toggle("dark-mode");
         document.getElementById("header").classList.toggle("border-b");
@@ -39,11 +40,21 @@ const Header = () => {
             logo.src = "/logo-light.png";
             slider.style.backgroundImage = "url('slider-bg.jpg')";
             footer.style.backgroundImage = "url('/footer-bg.jpg')";
+
+            for (let i = 0; i < blocks.length; i++) {
+                blocks[i].classList.add("border");
+                blocks[i].classList.remove("shadow-[0px_4px_20px_rgba(227,227,227,0.6)]");
+            }
         } else {
             icon.src = "/night.png";
             logo.src = "/logo-dark.png";
             slider.style.backgroundImage = "url('slider-bg-white.jpg')";
             footer.style.backgroundImage = "";
+
+            for (let i = 0; i < blocks.length; i++) {
+                blocks[i].classList.remove("border");
+                blocks[i].classList.add("shadow-[0px_4px_20px_rgba(227,227,227,0.6)]");
+            }
         }
     };
 
