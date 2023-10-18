@@ -103,11 +103,11 @@ const Header = () => {
                             />
                         </span>
                     )} */}
-                    <span className="hidden">
+                    <span className="">
                         <ProfileMenu />
                     </span>
 
-                    <span className="">
+                    <span className="hidden">
                         <MyButton
                             link="/login-register/login"
                             icon={FiLogIn}
