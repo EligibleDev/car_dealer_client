@@ -13,7 +13,7 @@ const MyRouter = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch("/brands.json"),
+                loader: () => fetch("http://localhost:5000/brands"),
             },
             {
                 path: "/cart",
@@ -26,10 +26,13 @@ const MyRouter = createBrowserRouter([
             {
                 path: "/brands/:name",
                 element: <BrandDetails />,
-                loader: () => fetch("/brands.json"),
+                loader: ({ params }) =>
+                    fetch(`http://localhost:5000/brands/${params.name}`),
             },
         ],
     },
 ]);
 
 export default MyRouter;
+// pore brand json ta file er moddhe theke load korte hobe
+// ar product gulo loader diye load korte hobe

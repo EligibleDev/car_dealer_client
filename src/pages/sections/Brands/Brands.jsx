@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
-import MyButton from "../../../components/MyButton/MyButton";
 import PropTypes from "prop-types";
-import { Button } from "@material-tailwind/react";
-import { ImLink } from "react-icons/im";
 import Marquee from "react-fast-marquee";
 
 const Brands = ({ brands }) => {
