@@ -14,7 +14,7 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FiEdit } from "react-icons/fi";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const BrandDetails = () => {
     const brand = useLoaderData();
@@ -145,15 +145,18 @@ const BrandDetails = () => {
                                     </div>
                                 </CardBody>
                                 <CardFooter className="pt-3">
-                                    <Button
-                                        fullWidth={true}
-                                        style={{
-                                            filter: `drop-shadow(3px 3px 20px rgba(255, 14, 31, .7))`,
-                                        }}
-                                        className="bg-[var(--red)] rounded-br-none rounded-tl-none"
-                                    >
-                                        Details
-                                    </Button>
+                                    <Link to={`http://localhost:5173/cars/${car?.link}`}>
+                                        {" "}
+                                        <Button
+                                            fullWidth={true}
+                                            style={{
+                                                filter: `drop-shadow(3px 3px 20px rgba(255, 14, 31, .7))`,
+                                            }}
+                                            className="bg-[var(--red)] rounded-br-none rounded-tl-none"
+                                        >
+                                            Details
+                                        </Button>
+                                    </Link>
                                 </CardFooter>
                             </Card>
                         ))}

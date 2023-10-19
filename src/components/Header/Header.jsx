@@ -61,7 +61,7 @@ const Header = () => {
     return (
         <header
             id="header"
-            className="px-4 pt-4 xl:p-0 shadow-[0_5px_10px_0_rgba(0,0,0,.35)] sticky top-0 left-0 right-0 z-50 border-b-[rgba(255,255,255,.05)] bg-[var(--bg)]"
+            className="px-4 pt-4 xl:p-0 shadow-[0_5px_10px_0_rgba(0,0,0,.35)] sticky top-0 left-0 right-0 z-[100] border-b-[rgba(255,255,255,.05)] bg-[var(--bg)]"
         >
             <nav className="max-w-screen-xl mx-auto flex justify-between lg:items-center items-start">
                 <Link to="/" className="pb-4 lg:pb-0">
