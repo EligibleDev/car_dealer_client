@@ -76,7 +76,7 @@ const CarDetails = () => {
                 <div className="bg-[var(--title)] bg-opacity-70 w-full min-h-screen">
                     <div className="max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row gap-5 lg:gap-12 py-12 lg:py-24 px-8 lg:px-0">
                         <div className="w-full lg:w-2/3 bg-[var(--bg)] shadow-lg p-5 flex flex-col justify-center items-start">
-                            <img className="w-full" src={car?.image} alt="" />
+                            <img className="w-full" src={car?.image} alt={car?.name} />
 
                             <h1 className="text-3xl sm:text-4xl py-4 font-bold">
                                 {car?.name}

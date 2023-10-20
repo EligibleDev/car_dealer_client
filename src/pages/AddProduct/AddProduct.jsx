@@ -5,8 +5,8 @@ import toast from "react-hot-toast";
 
 const AddProduct = () => {
     const [rating, setRating] = useState(0);
-    const [brand, setBrand] = useState('BMW');
-    const [type, setType] = useState('SUV');
+    const [brand, setBrand] = useState("BMW");
+    const [type, setType] = useState("SUV");
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -59,6 +59,7 @@ const AddProduct = () => {
                     <div className="flex flex-col gap-4">
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <Input
+                                required
                                 className=""
                                 color="red"
                                 type="text"
@@ -66,6 +67,7 @@ const AddProduct = () => {
                                 name="name"
                             />
                             <Input
+                                required
                                 className=""
                                 color="red"
                                 type="number"
@@ -75,12 +77,12 @@ const AddProduct = () => {
                         </div>
                         <div className="flex gap-4 justify-center items-center">
                             <div className="flex-1">
-                           
                                 <select
                                     id="brands"
                                     name="brand"
                                     onChange={(e) => setBrand(e.target.value)}
                                     className="bg-[var(--bg)] border  text-[var(--body)] text-sm rounded-lg focus:ring-[var(--red)] focus:border-[var(--red)] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[var(--red)] dark:focus:border-[var(--red)]"
+                                    required
                                 >
                                     <option>Select Brand</option>
                                     <option value="BMW">BMW</option>
@@ -92,12 +94,12 @@ const AddProduct = () => {
                                 </select>
                             </div>
                             <div className="flex-1">
-
                                 <select
                                     id="types"
                                     name="type"
                                     onChange={(e) => setType(e.target.value)}
                                     className="bg-[var(--bg)] border  text-[var(--body)] text-sm rounded-lg focus:ring-[var(--red)] focus:border-[var(--red)] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[var(--red)] dark:focus:border-[var(--red)]"
+                                    required
                                 >
                                     <option>Select Car Type</option>
                                     <option value="SUV">SUV</option>
@@ -111,7 +113,7 @@ const AddProduct = () => {
                             </div>
                         </div>
 
-                        <Input
+                        <Input required
                             color="red"
                             type="url"
                             label="Photo URL"
