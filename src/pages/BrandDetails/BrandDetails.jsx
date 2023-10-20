@@ -22,16 +22,13 @@ const BrandDetails = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/cars")
+        fetch(`http://localhost:5000/cars/by_brand/${params.name}`)
             .then((res) => res.json())
             .then((data) => {
-                const match = data.filter((car) => car?.brand === params.name);
-                setCars(match);
+                setCars(data);
             })
             .catch((error) => console.error(error));
     }, [params.name]);
-
-    console.log(cars);
 
     return (
         <>
@@ -132,20 +129,23 @@ const BrandDetails = () => {
                                             </span>
                                         </Tooltip>
 
+                                        <Tooltip content={`Update ${car?.name}`}>
+                                            <Link
+                                                to={`/update_car/${car?._id}`}
+                                                className="cursor-pointer rounded-full border border-[var(--body)] bg-[var(--body)]  p-4 text-[var(--bg)] transition-colors hover:border-[var(--body)]  hover:bg-[var(--text)]"
+                                            >
+                                                <FiEdit />
+                                            </Link>
+                                        </Tooltip>
                                         <Tooltip content={`Price: $${car?.price}`}>
                                             <span className="cursor-pointer rounded-full border border-[var(--body)] bg-[var(--body)]  p-3 text-[var(--bg)] transition-colors hover:border-[var(--body)]  hover:bg-[var(--text)]">
                                                 ${car?.price}
                                             </span>
                                         </Tooltip>
-                                        <Tooltip content={`Update ${car?.name}`}>
-                                            <span className="cursor-pointer rounded-full border border-[var(--body)] bg-[var(--body)]  p-3 text-[var(--bg)] transition-colors hover:border-[var(--body)]  hover:bg-[var(--text)]">
-                                                <FiEdit />
-                                            </span>
-                                        </Tooltip>
                                     </div>
                                 </CardBody>
                                 <CardFooter className="pt-3">
-                                    <Link to={`http://localhost:5173/cars/${car?.link}`}>
+                                    <Link to={`/cars/${car?._id}`}>
                                         {" "}
                                         <Button
                                             fullWidth={true}

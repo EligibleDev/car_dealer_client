@@ -5,6 +5,11 @@ import Cart from "../pages/Cart/Cart";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import BrandDetails from "../pages/BrandDetails/BrandDetails";
 import CarDetails from "../pages/CarDetails/CarDetails";
+import UpdateCar from "../pages/UpdateCar/UpdateCar";
+import LoginRegister from "../pages/LoginRegister/LoginRegister";
+import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 
 const MyRouter = createBrowserRouter([
     {
@@ -18,11 +23,29 @@ const MyRouter = createBrowserRouter([
             },
             {
                 path: "/cart",
-                element: <Cart />,
+                element: (
+                    <PrivateRoute>
+                        <Cart />
+                    </PrivateRoute>
+                ),
+                loader: () => fetch("http://localhost:5000/cart"),
             },
             {
                 path: "/add_product",
-                element: <AddProduct />,
+                element: (
+                    <PrivateRoute>
+                        <AddProduct />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "/update_car/:id",
+                element: (
+                    <PrivateRoute>
+                        <UpdateCar />
+                    </PrivateRoute>
+                ),
+                loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`),
             },
             {
                 path: "/brands/:name",
@@ -31,14 +54,30 @@ const MyRouter = createBrowserRouter([
                     fetch(`http://localhost:5000/brands/${params.name}`),
             },
             {
-                path: "cars/:link",
-                element:<CarDetails/>,
-                loader: ({params}) => fetch(`http://localhost:5000/cars/${params.link}`)
-            }
+                path: "cars/:id",
+                element: (
+                    <PrivateRoute>
+                        <CarDetails />
+                    </PrivateRoute>
+                ),
+                loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`),
+            },
+            {
+                path: "/login-register",
+                element: <LoginRegister />,
+                children: [
+                    {
+                        path: "/login-register/login",
+                        element: <Login />,
+                    },
+                    {
+                        path: "/login-register/register",
+                        element: <Register />,
+                    },
+                ],
+            },
         ],
     },
 ]);
 
 export default MyRouter;
-// pore brand json ta file er moddhe theke load korte hobe
-// ar product gulo loader diye load korte hobe

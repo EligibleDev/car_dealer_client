@@ -1,12 +1,15 @@
-import { Input, Button, Textarea, Rating } from "@material-tailwind/react";
+import { Button, Rating, Textarea, Input } from "@material-tailwind/react";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
+import { useLoaderData, useParams } from "react-router-dom";
 
-const AddProduct = () => {
+const UpdateCar = () => {
+    const car = useLoaderData();
+    const params = useParams();
     const [rating, setRating] = useState(0);
-    const [brand, setBrand] = useState(null);
-    const [type, setType] = useState(null);
+    const [brand, setBrand] = useState(car?.brand);
+    const [type, setType] = useState(car?.type);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -17,24 +20,24 @@ const AddProduct = () => {
         const image = event.target.image.value;
         const description = event.target.description.value;
 
-        const newCar = { name, price, brand, type, image, description, rating, link };
+        const updatedCar = { name, price, brand, type, image, description, rating, link };
 
-        console.log(newCar);
+        console.log(updatedCar);
 
-        //sending data to the backend
-        fetch("http://localhost:5000/cars", {
-            method: "POST",
+        //sending the updated data to the backend
+        fetch(`http://localhost:5000/cars/${params?.id}`, {
+            method: "PUT",
             headers: {
                 "content-type": "application/json",
             },
-            body: JSON.stringify(newCar),
+            body: JSON.stringify(updatedCar),
         })
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     event.target.reset();
-                    return toast.success("Car Added Successfully!");
+                    return toast.success("Car Updated Successfully!");
                 }
             });
     };
@@ -42,7 +45,7 @@ const AddProduct = () => {
     return (
         <>
             <Helmet>
-                <title>Add New Car | Car Dealer</title>
+                <title>Update {car?.name} | Car Dealer</title>
             </Helmet>
 
             <div
@@ -50,7 +53,9 @@ const AddProduct = () => {
                 className="h-96 bg-center bg-no-repeat bg-cover"
             >
                 <div className="w-full h-full bg-[var(--title)] flex justify-center items-center">
-                    <h1 className="text-[var(--text)] text-5xl font-bold">Add a Car</h1>
+                    <h1 className="text-[var(--text)] text-5xl font-bold">
+                        Updating {car?.name}
+                    </h1>
                 </div>
             </div>
 
@@ -63,6 +68,7 @@ const AddProduct = () => {
                                 color="red"
                                 type="text"
                                 label="Name"
+                                defaultValue={car?.name}
                                 name="name"
                             />
                             <Input
@@ -70,6 +76,7 @@ const AddProduct = () => {
                                 color="red"
                                 type="number"
                                 label="Price"
+                                defaultValue={car?.price}
                                 name="price"
                             />
                         </div>
@@ -81,6 +88,7 @@ const AddProduct = () => {
                                 <select
                                     id="brands"
                                     name="brand"
+                                    value={car?.brand}
                                     onChange={(e) => setBrand(e.target.value)}
                                     className="bg-[var(--bg)] border  text-[var(--body)] text-sm rounded-lg focus:ring-[var(--red)] focus:border-[var(--red)] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[var(--red)] dark:focus:border-[var(--red)]"
                                 >
@@ -100,6 +108,7 @@ const AddProduct = () => {
                                 <select
                                     id="types"
                                     name="type"
+                                    value={car?.type}
                                     onChange={(e) => setType(e.target.value)}
                                     className="bg-[var(--bg)] border  text-[var(--body)] text-sm rounded-lg focus:ring-[var(--red)] focus:border-[var(--red)] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[var(--red)] dark:focus:border-[var(--red)]"
                                 >
@@ -118,6 +127,7 @@ const AddProduct = () => {
                             color="red"
                             type="url"
                             label="Photo URL"
+                            defaultValue={car?.image}
                             name="image"
                             id=""
                         />
@@ -126,6 +136,7 @@ const AddProduct = () => {
                             name="description"
                             color="red"
                             label="Short Description"
+                            defaultValue={car?.description}
                         />
 
                         <div className="flex justify-end items-center pb-2">
@@ -135,6 +146,7 @@ const AddProduct = () => {
                             <Rating
                                 className=""
                                 id="rating"
+                                value={car?.rating}
                                 onChange={(value) => setRating(value)}
                             />
                         </div>
@@ -146,7 +158,7 @@ const AddProduct = () => {
                             }}
                             className="bg-[var(--red)] ml-auto rounded-br-none rounded-tl-none w-fit"
                         >
-                            Add Product
+                            Update Product
                         </Button>
                     </div>
                 </form>
@@ -155,4 +167,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default UpdateCar;

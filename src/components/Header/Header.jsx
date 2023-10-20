@@ -5,10 +5,12 @@ import { HiMenu } from "react-icons/hi";
 import ProfileMenu from "./ProfileMenu/ProfileMenu";
 import { useState } from "react";
 import MyButton from "../MyButton/MyButton";
+import useAuth from "../../hooks/useAuth/useAuth";
 
 const Header = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
+    const {user} = useAuth();
 
     const navLinks = [
         {
@@ -105,7 +107,7 @@ const Header = () => {
                 </nav>
 
                 <nav className="flex items-center justify-end gap-4  mr-4 lg:mr-0">
-                    {/* {user ? (
+                    {user ? (
                         <span className="">
                             <ProfileMenu />
                         </span>
@@ -117,8 +119,8 @@ const Header = () => {
                                 text="login"
                             />
                         </span>
-                    )} */}
-                    <span className="">
+                    )}
+                    {/* <span className="">
                         <ProfileMenu />
                     </span>
 
@@ -128,7 +130,7 @@ const Header = () => {
                             icon={FiLogIn}
                             text="login"
                         />
-                    </span>
+                    </span> */}
 
                     <img
                         onClick={toggleTheme}

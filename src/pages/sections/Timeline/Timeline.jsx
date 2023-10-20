@@ -3,7 +3,10 @@ import {
     VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { IoIosSchool } from "react-icons/io";
+import {IoCarSportSharp} from "react-icons/io5"
+import {GiSteeringWheel} from "react-icons/gi"
+import {FaMoneyBillWave} from "react-icons/fa"
+import {PiCarProfileBold} from "react-icons/pi"
 
 const Timeline = () => {
     return (
@@ -21,7 +24,7 @@ const Timeline = () => {
                     contentStyle={{ background: "var(--red)", color: "#fff" }}
                     contentArrowStyle={{ borderRight: "7px solid  var(--red)" }}
                     iconStyle={{ background: "var(--red)", color: "#fff" }}
-                    icon={<IoIosSchool />}
+                    icon={<IoCarSportSharp />}
                 >
                     <h3 className="vertical-timeline-element-title">Selecting the Car</h3>
                 </VerticalTimelineElement>
@@ -29,7 +32,7 @@ const Timeline = () => {
                     contentStyle={{ background: "var(--red)", color: "#fff" }}
                     contentArrowStyle={{ borderRight: "7px solid  var(--red)" }}
                     iconStyle={{ background: "var(--red)", color: "#fff" }}
-                    icon={<IoIosSchool />}
+                    icon={<GiSteeringWheel />}
                 >
                     <h3 className="vertical-timeline-element-title">Test Drive</h3>
                 </VerticalTimelineElement>
@@ -37,7 +40,7 @@ const Timeline = () => {
                     contentStyle={{ background: "var(--red)", color: "#fff" }}
                     contentArrowStyle={{ borderRight: "7px solid  var(--red)" }}
                     iconStyle={{ background: "var(--red)", color: "#fff" }}
-                    icon={<IoIosSchool />}
+                    icon={<FaMoneyBillWave />}
                 >
                     <h3 className="vertical-timeline-element-title">
                         Payment and Paperwork
@@ -47,7 +50,7 @@ const Timeline = () => {
                     contentStyle={{ background: "var(--red)", color: "#fff" }}
                     contentArrowStyle={{ borderRight: "7px solid  var(--red)" }}
                     iconStyle={{ background: "var(--red)", color: "#fff" }}
-                    icon={<IoIosSchool />}
+                    icon={<PiCarProfileBold />}
                 >
                     <h3 className="vertical-timeline-element-title">Ready to Rev</h3>
                 </VerticalTimelineElement>

@@ -3,12 +3,54 @@ import { useLoaderData } from "react-router-dom";
 import { BiCart } from "react-icons/bi";
 import toast from "react-hot-toast";
 import { Button, Rating } from "@material-tailwind/react";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const CarDetails = () => {
     const car = useLoaderData();
+    const { _id, ...carForDB } = car;
+
+    const [isInCart, setIsInCart] = useState(false);
+    useEffect(() => {
+        checkIfCarIsInCart();
+    }, []);
+
+    const checkIfCarIsInCart = () => {
+        fetch("http://localhost:5000/cart")
+            .then((res) => res.json())
+            .then((cartData) => {
+                // Check if the car's ID exists in the cart collection
+                const carInCart = cartData.some((item) => item._id === car._id);
+                setIsInCart(carInCart);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
 
     const handleAddToCart = () => {
-        toast.success("Successfully Added to Cart");
+        if (isInCart) {
+            return toast.error("Already in Cart");
+        } else {
+            fetch("http://localhost:5000/cart", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(carForDB),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                    if (data.insertedId) {
+                        setIsInCart(true);
+                        return toast.success("Successfully Added to Cart");
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        }
     };
 
     console.log(car);
@@ -16,7 +58,7 @@ const CarDetails = () => {
         <>
             <Helmet>
                 <title>
-                    {car?.name} {"<"} {car?.brand} | Car Dealer
+                    {car?.name} by {car?.brand} | Car Dealer
                 </title>
             </Helmet>
 
@@ -49,13 +91,19 @@ const CarDetails = () => {
                                 <p>
                                     Brand:{" "}
                                     <span className="font-bold text-[var(--red)]">
-                                        ${car?.brand}
+                                        {car?.brand}
                                     </span>
                                 </p>
                                 <p>
                                     Type:{" "}
                                     <span className="font-bold text-[var(--red)]">
-                                        ${car?.type}
+                                        {car?.type}
+                                    </span>
+                                </p>
+                                <p>
+                                    Price:{" "}
+                                    <span className="font-bold text-[var(--red)]">
+                                        ${car?.price}
                                     </span>
                                 </p>
                                 <Rating readonly value={car?.rating} />
