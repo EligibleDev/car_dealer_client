@@ -5,8 +5,8 @@ import toast from "react-hot-toast";
 
 const AddProduct = () => {
     const [rating, setRating] = useState(0);
-    const [brand, setBrand] = useState(null);
-    const [type, setType] = useState(null);
+    const [brand, setBrand] = useState('BMW');
+    const [type, setType] = useState('SUV');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -22,7 +22,7 @@ const AddProduct = () => {
         console.log(newCar);
 
         //sending data to the backend
-        fetch("https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/cars", {
+        fetch("https://assignment-10-server-ivory-one.vercel.app/cars", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -75,15 +75,14 @@ const AddProduct = () => {
                         </div>
                         <div className="flex gap-4 justify-center items-center">
                             <div className="flex-1">
-                                <label className="cursor-pointer" htmlFor="brands">
-                                    Select Brand
-                                </label>
+                           
                                 <select
                                     id="brands"
                                     name="brand"
                                     onChange={(e) => setBrand(e.target.value)}
                                     className="bg-[var(--bg)] border  text-[var(--body)] text-sm rounded-lg focus:ring-[var(--red)] focus:border-[var(--red)] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[var(--red)] dark:focus:border-[var(--red)]"
                                 >
+                                    <option>Select Brand</option>
                                     <option value="BMW">BMW</option>
                                     <option value="Ferrari">Ferrari</option>
                                     <option value="Lamborghini">Lamborghini</option>
@@ -93,9 +92,6 @@ const AddProduct = () => {
                                 </select>
                             </div>
                             <div className="flex-1">
-                                <label className="cursor-pointer" htmlFor="types">
-                                    Select Car Type
-                                </label>
 
                                 <select
                                     id="types"
@@ -103,6 +99,7 @@ const AddProduct = () => {
                                     onChange={(e) => setType(e.target.value)}
                                     className="bg-[var(--bg)] border  text-[var(--body)] text-sm rounded-lg focus:ring-[var(--red)] focus:border-[var(--red)] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[var(--red)] dark:focus:border-[var(--red)]"
                                 >
+                                    <option>Select Car Type</option>
                                     <option value="SUV">SUV</option>
                                     <option value="Sport Car">Sports Car</option>
                                     <option value="Van">Van</option>

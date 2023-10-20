@@ -21,11 +21,10 @@ const CarDetails = () => {
 
     const checkIfCarIsInCart = () => {
         fetch(
-            `https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/cart`
+            `https://assignment-10-server-ivory-one.vercel.app/my-cart/${user.email}`
         )
             .then((res) => res.json())
             .then((cartData) => {
-                // Check if the car's ID exists in the cart collection
                 const carInCart = cartData.some((item) => item._id === car._id);
                 setIsInCart(carInCart);
             })
@@ -39,7 +38,7 @@ const CarDetails = () => {
             return toast.error("Already in Cart");
         } else {
             fetch(
-                `https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/cart`,
+                `https://assignment-10-server-ivory-one.vercel.app/my-cart/${user.email}`,
                 {
                     method: "POST",
                     headers: {

@@ -13,10 +13,13 @@ import toast from "react-hot-toast";
 import { TbListDetails } from "react-icons/tb";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../../hooks/useAuth/useAuth";
 
 const Cart = () => {
     const LoadedCars = useLoaderData();
+    const {user} = useAuth();
     const [cars, setCars] = useState(LoadedCars);
+    console.log(LoadedCars);
 
     const handleDeleteFromCart = (_id) => {
         console.log(_id);
@@ -32,7 +35,7 @@ const Cart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 fetch(
-                    `https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/cart/${_id}`,
+                    `https://assignment-10-server-ivory-one.vercel.app/cart/${_id}`,
                     { method: "DELETE" }
                 )
                     .then((res) => res.json())

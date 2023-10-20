@@ -30,7 +30,7 @@ const Register = () => {
         handleCreateUser(email, password)
             .then((res) => {
                 const user = res.user;
-                fetch("https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/users", {
+                fetch("https://assignment-10-server-ivory-one.vercel.app/users", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json",
