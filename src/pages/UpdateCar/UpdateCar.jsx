@@ -25,7 +25,7 @@ const UpdateCar = () => {
         console.log(updatedCar);
 
         //sending the updated data to the backend
-        fetch(`https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cars/${params?.id}`, {
+        fetch(`https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/cars/${params?.id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

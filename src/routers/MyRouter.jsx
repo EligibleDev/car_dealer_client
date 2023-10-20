@@ -21,7 +21,7 @@ const MyRouter = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch("https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/brands"),
+                loader: () => fetch("https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/brands"),
             },
             {
                 path: "/my-cart/:email",
@@ -30,7 +30,7 @@ const MyRouter = createBrowserRouter([
                         <Cart />
                     </PrivateRoute>
                 ),
-                loader: ({params}) => fetch(`https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/my-cart/${params.email}`),
+                loader: ({params}) => fetch(`https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/my-cart/${params.email}`),
             },
             {
                 path: "/add_product",
@@ -47,13 +47,13 @@ const MyRouter = createBrowserRouter([
                         <UpdateCar />
                     </PrivateRoute>
                 ),
-                loader: ({ params }) => fetch(`https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cars/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/cars/${params.id}`),
             },
             {
                 path: "/brands/:name",
                 element: <BrandDetails />,
                 loader: ({ params }) =>
-                    fetch(`https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/brands/${params.name}`),
+                    fetch(`https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/brands/${params.name}`),
             },
             {
                 path: "cars/:id",
@@ -62,7 +62,7 @@ const MyRouter = createBrowserRouter([
                         <CarDetails />
                     </PrivateRoute>
                 ),
-                loader: ({ params }) => fetch(`https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cars/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/cars/${params.id}`),
             },
             {
                 path: "/login-register",

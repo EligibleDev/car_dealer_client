@@ -32,7 +32,7 @@ const Cart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 fetch(
-                    `https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cart/${_id}`,
+                    `https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/cart/${_id}`,
                     { method: "DELETE" }
                 )
                     .then((res) => res.json())

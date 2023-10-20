@@ -22,7 +22,7 @@ const BrandDetails = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-        fetch(`https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cars/by_brand/${params.name}`)
+        fetch(`https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/cars/by_brand/${params.name}`)
             .then((res) => res.json())
             .then((data) => {
                 setCars(data);

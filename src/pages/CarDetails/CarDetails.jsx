@@ -21,7 +21,7 @@ const CarDetails = () => {
 
     const checkIfCarIsInCart = () => {
         fetch(
-            `https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cart`
+            `https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/cart`
         )
             .then((res) => res.json())
             .then((cartData) => {
@@ -39,7 +39,7 @@ const CarDetails = () => {
             return toast.error("Already in Cart");
         } else {
             fetch(
-                `https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cart`,
+                `https://assignment-10-server-ksm7irbt4-mikails-projects-c152681f.vercel.app/cart`,
                 {
                     method: "POST",
                     headers: {
