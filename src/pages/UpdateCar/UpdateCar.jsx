@@ -25,7 +25,7 @@ const UpdateCar = () => {
         console.log(updatedCar);
 
         //sending the updated data to the backend
-        fetch(`http://localhost:5000/cars/${params?.id}`, {
+        fetch(`https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cars/${params?.id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -36,7 +36,6 @@ const UpdateCar = () => {
             .then((data) => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    event.target.reset();
                     return toast.success("Car Updated Successfully!");
                 }
             });

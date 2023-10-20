@@ -10,25 +10,27 @@ import LoginRegister from "../pages/LoginRegister/LoginRegister";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const MyRouter = createBrowserRouter([
     {
         path: "/",
         element: <MyLayout />,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch("http://localhost:5000/brands"),
+                loader: () => fetch("https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/brands"),
             },
             {
-                path: "/cart",
+                path: "/my-cart/:email",
                 element: (
                     <PrivateRoute>
                         <Cart />
                     </PrivateRoute>
                 ),
-                loader: () => fetch("http://localhost:5000/cart"),
+                loader: ({params}) => fetch(`https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/my-cart/${params.email}`),
             },
             {
                 path: "/add_product",
@@ -45,13 +47,13 @@ const MyRouter = createBrowserRouter([
                         <UpdateCar />
                     </PrivateRoute>
                 ),
-                loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cars/${params.id}`),
             },
             {
                 path: "/brands/:name",
                 element: <BrandDetails />,
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/brands/${params.name}`),
+                    fetch(`https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/brands/${params.name}`),
             },
             {
                 path: "cars/:id",
@@ -60,7 +62,7 @@ const MyRouter = createBrowserRouter([
                         <CarDetails />
                     </PrivateRoute>
                 ),
-                loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cars/${params.id}`),
             },
             {
                 path: "/login-register",

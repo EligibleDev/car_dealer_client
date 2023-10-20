@@ -22,7 +22,7 @@ const AddProduct = () => {
         console.log(newCar);
 
         //sending data to the backend
-        fetch("http://localhost:5000/cars", {
+        fetch("https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cars", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

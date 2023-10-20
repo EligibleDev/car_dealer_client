@@ -5,18 +5,24 @@ import toast from "react-hot-toast";
 import { Button, Rating } from "@material-tailwind/react";
 import { useEffect } from "react";
 import { useState } from "react";
+import useAuth from "../../hooks/useAuth/useAuth";
 
 const CarDetails = () => {
-    const car = useLoaderData();
-    const { _id, ...carForDB } = car;
-
     const [isInCart, setIsInCart] = useState(false);
+    const car = useLoaderData();
+    const { user } = useAuth();
+
+    const { _id, ...carForDB } = car;
+    carForDB.email = user.email;
+
     useEffect(() => {
         checkIfCarIsInCart();
     }, []);
 
     const checkIfCarIsInCart = () => {
-        fetch("http://localhost:5000/cart")
+        fetch(
+            `https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cart`
+        )
             .then((res) => res.json())
             .then((cartData) => {
                 // Check if the car's ID exists in the cart collection
@@ -32,13 +38,16 @@ const CarDetails = () => {
         if (isInCart) {
             return toast.error("Already in Cart");
         } else {
-            fetch("http://localhost:5000/cart", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify(carForDB),
-            })
+            fetch(
+                `https://assignment-10-server-lmg8qfdfu-mikails-projects-c152681f.vercel.app/cart`,
+                {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                    },
+                    body: JSON.stringify(carForDB),
+                }
+            )
                 .then((res) => res.json())
                 .then((data) => {
                     console.log(data);
@@ -53,14 +62,13 @@ const CarDetails = () => {
         }
     };
 
-    console.log(car);
     return (
         <>
-            <Helmet>
+            {/* <Helmet>
                 <title>
                     {car?.name} by {car?.brand} | Car Dealer
                 </title>
-            </Helmet>
+            </Helmet> */}
 
             <section
                 style={{ backgroundImage: `url('${car?.image}')` }}

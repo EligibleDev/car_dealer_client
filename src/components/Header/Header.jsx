@@ -19,7 +19,7 @@ const Header = () => {
         },
         {
             name: "Cart",
-            path: "/cart",
+            path: `/my-cart/${user?.email}`,
         },
         {
             name: "Add Product",

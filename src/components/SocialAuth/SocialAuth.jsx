@@ -28,7 +28,7 @@ const SocialAuth = () => {
                 className="flex items-center gap-3 w-full justify-center mt-4"
             >
                 <img
-                    src="https://www.material-tailwind.com/icons/google.svg"
+                    src="/Google__G__Logo.svg.webp"
                     alt="metamask"
                     className="h-6 w-6"
                 />
