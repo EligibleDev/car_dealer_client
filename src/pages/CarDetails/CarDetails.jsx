@@ -64,11 +64,11 @@ const CarDetails = () => {
 
     return (
         <>
-            {/* <Helmet>
+            <Helmet>
                 <title>
                     {car?.name} by {car?.brand} | Car Dealer
                 </title>
-            </Helmet> */}
+            </Helmet>
 
             <section
                 style={{ backgroundImage: `url('${car?.image}')` }}
