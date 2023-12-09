@@ -1,8 +1,19 @@
-# React + Vite
+## [Car Dealer](https://assignment-10-car-dealer.web.app)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Description:** This is a car shop website where users can add or edit cars. or add cars in there personal carts. users can change the website's theme by clicking the sun/moon icon.
 
-Currently, two official plugins are available:
+**Technologies:**
+- MERN
+- Material Tailwind
+- AOS Animation
+- React Countup
+- react-helmet-async
+- react-hot-toast
+- react-icons
+- react-router-dom
+- react-vertical-timeline-component
+- sweetalert2
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Important Links:**
+- [Server Side Code](https://github.com/EligibleDev/car_dealer_server)
+- [Live Site Link](https://assignment-10-car-dealer.web.app)
